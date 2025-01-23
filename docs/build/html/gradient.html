@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gradient package &mdash; Gradient Descent 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Gradient Descent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">gradient package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-gradient.PreProcessing">gradient.PreProcessing module</a><ul>
+<li><a class="reference internal" href="#gradient.PreProcessing.DataPreprocessor"><code class="docutils literal notranslate"><span class="pre">DataPreprocessor</span></code></a><ul>
+<li><a class="reference internal" href="#gradient.PreProcessing.DataPreprocessor.handle_outliers"><code class="docutils literal notranslate"><span class="pre">DataPreprocessor.handle_outliers()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.PreProcessing.DataPreprocessor.normalize"><code class="docutils literal notranslate"><span class="pre">DataPreprocessor.normalize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-gradient.gradient_descent">gradient.gradient_descent module</a><ul>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent"><code class="docutils literal notranslate"><span class="pre">GradientDescent</span></code></a><ul>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.costFunction"><code class="docutils literal notranslate"><span class="pre">GradientDescent.costFunction()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.fit"><code class="docutils literal notranslate"><span class="pre">GradientDescent.fit()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.get_weights"><code class="docutils literal notranslate"><span class="pre">GradientDescent.get_weights()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.gradients"><code class="docutils literal notranslate"><span class="pre">GradientDescent.gradients()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.hypothesis"><code class="docutils literal notranslate"><span class="pre">GradientDescent.hypothesis()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.plot"><code class="docutils literal notranslate"><span class="pre">GradientDescent.plot()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.plot_weights"><code class="docutils literal notranslate"><span class="pre">GradientDescent.plot_weights()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.plt"><code class="docutils literal notranslate"><span class="pre">GradientDescent.plt</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.predict"><code class="docutils literal notranslate"><span class="pre">GradientDescent.predict()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.regCostFunction"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.regCostFunction_ElasticNet"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction_ElasticNet()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.regCostFunction_Lasso"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction_Lasso()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.regCostFunction_Ridge"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction_Ridge()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.regGradients"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regGradients()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.score"><code class="docutils literal notranslate"><span class="pre">GradientDescent.score()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.testCostFct"><code class="docutils literal notranslate"><span class="pre">GradientDescent.testCostFct()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.testRegCostFct"><code class="docutils literal notranslate"><span class="pre">GradientDescent.testRegCostFct()</span></code></a></li>
+<li><a class="reference internal" href="#gradient.gradient_descent.GradientDescent.updateParameters"><code class="docutils literal notranslate"><span class="pre">GradientDescent.updateParameters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-gradient">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gradient Descent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">gradient package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gradient.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gradient-package">
+<h1>gradient package<a class="headerlink" href="#gradient-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gradient.example.html">gradient.example package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gradient.example.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gradient.example.html#module-gradient.example.data">gradient.example.data module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gradient.example.html#gradient.example.data.save_obj"><code class="docutils literal notranslate"><span class="pre">save_obj()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gradient.example.html#gradient.example.data.unpickle"><code class="docutils literal notranslate"><span class="pre">unpickle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gradient.example.html#module-gradient.example">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-gradient.PreProcessing">
+<span id="gradient-preprocessing-module"></span><h2>gradient.PreProcessing module<a class="headerlink" href="#module-gradient.PreProcessing" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="gradient.PreProcessing.DataPreprocessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gradient.PreProcessing.</span></span><span class="sig-name descname"><span class="pre">DataPreprocessor</span></span><a class="headerlink" href="#gradient.PreProcessing.DataPreprocessor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe pour gérer la normalisation et le traitement des valeurs aberrantes en utilisant StandardScaler.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.PreProcessing.DataPreprocessor.handle_outliers">
+<span class="sig-name descname"><span class="pre">handle_outliers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.PreProcessing.DataPreprocessor.handle_outliers" title="Permalink to this definition"></a></dt>
+<dd><p>Gère les valeurs aberrantes en limitant les valeurs à un seuil.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>ndarray</em>) – Matrice des caractéristiques.</p></li>
+<li><p><strong>threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – Seuil (en écart-types).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Matrice traitée.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.PreProcessing.DataPreprocessor.normalize">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.PreProcessing.DataPreprocessor.normalize" title="Permalink to this definition"></a></dt>
+<dd><p>Normalise les caractéristiques et la cible en utilisant StandardScaler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>ndarray</em>) – Matrice des caractéristiques.</p></li>
+<li><p><strong>target</strong> (<em>ndarray</em><em>, </em><em>optional</em>) – Vecteur cible (peut être None si seulement les caractéristiques doivent être normalisées).</p></li>
+<li><p><strong>is_training</strong> (<em>bool</em>) – Indique si les scalers doivent être ajustés (pour l’entraînement) ou réutilisés (pour le test).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>normalized_features</strong> (<em>ndarray</em>) – Matrice des caractéristiques normalisées.</p></li>
+<li><p><strong>normalized_target</strong> (<em>ndarray, optional</em>) – Vecteur cible normalisé (si la cible est fournie).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-gradient.gradient_descent">
+<span id="gradient-gradient-descent-module"></span><h2>gradient.gradient_descent module<a class="headerlink" href="#module-gradient.gradient_descent" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gradient.gradient_descent.</span></span><span class="sig-name descname"><span class="pre">GradientDescent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regularize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3e-09</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_net</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Descent gradient class with regularize technique</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>regularize</strong> (<em>bool</em>) – If True, the regularization is used.</p></li>
+<li><p><strong>bias</strong> (<em>bool</em>) – If the True, a bias is added to the features.</p></li>
+<li><p><strong>alpha</strong> (<em>float &gt; 0</em>) – Coefficient for the step when updating the parameters.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This class aims at computing the parameters of a linear model using
+a descent gradient method with or without regularization.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.costFunction">
+<span class="sig-name descname"><span class="pre">costFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.costFunction" title="Permalink to this definition"></a></dt>
+<dd><p>Fonction de coût</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Find the optimal parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>2d sequence</em><em> of </em><em>float</em>) – The input parameters.</p></li>
+<li><p><strong>label</strong> (<em>2d sequence</em><em> of </em><em>float</em>) – The output parameters</p></li>
+<li><p><strong>parameters</strong> (<em>2d sequence</em><em> of </em><em>float</em>) – The initial guess for the descent gradient.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.get_weights">
+<span class="sig-name descname"><span class="pre">get_weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.get_weights" title="Permalink to this definition"></a></dt>
+<dd><p>Retourne les poids (paramètres) du modèle après l’entraînement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Les poids du modèle (y compris le biais s’il est activé).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.gradients">
+<span class="sig-name descname"><span class="pre">gradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.gradients" title="Permalink to this definition"></a></dt>
+<dd><p>Dérivée de la fonction de coût == gradients</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.hypothesis">
+<span class="sig-name descname"><span class="pre">hypothesis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.hypothesis" title="Permalink to this definition"></a></dt>
+<dd><p>Compute our hypothesis model (linear regression), use a fonction:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">costFctEvol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.plot" title="Permalink to this definition"></a></dt>
+<dd><p>Affiche le graphe de convergence de la fonction coût.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>costFctEvol</strong> (<em>list</em><em> of </em><em>float</em>) – Liste contenant l’évolution de la fonction coût au cours des itérations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.plot_weights">
+<span class="sig-name descname"><span class="pre">plot_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.plot_weights" title="Permalink to this definition"></a></dt>
+<dd><p>Affiche un graphe des poids des caractéristiques après l’entraînement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_names</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – Liste des noms des caractéristiques (colonnes de X). Si None, utilise des indices numériques.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Cette méthode suppose que le modèle a déjà été entraîné.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.plt">
+<span class="sig-name descname"><span class="pre">plt</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;module</span> <span class="pre">'matplotlib.pyplot'</span> <span class="pre">from</span> <span class="pre">'C:\\anaconda3\\envs\\env_gradient\\lib\\site-packages\\matplotlib\\pyplot.py'&gt;</span></em><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.plt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_features</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Make predictions using the result of the gradient descent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_features</strong> (<em>2d sequence</em><em> of </em><em>float</em>) – The feature for which to predict the labels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>predicted_labels</strong> – The predicted labels</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2d sequence of float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The method fit must be called first.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.regCostFunction">
+<span class="sig-name descname"><span class="pre">regCostFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.regCostFunction" title="Permalink to this definition"></a></dt>
+<dd><p>Fonction de coût régularisée</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.regCostFunction_ElasticNet">
+<span class="sig-name descname"><span class="pre">regCostFunction_ElasticNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.regCostFunction_ElasticNet" title="Permalink to this definition"></a></dt>
+<dd><p>Fonction de coût avec régularisation Elastic Net (combinaison L1 et L2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>ndarray</em>) – Prédictions du modèle.</p></li>
+<li><p><strong>y</strong> (<em>ndarray</em>) – Valeurs réelles.</p></li>
+<li><p><strong>lmb</strong> (<em>float</em>) – Coefficient de régularisation.</p></li>
+<li><p><strong>theta</strong> (<em>ndarray</em>) – Coefficients du modèle.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Poids entre L1 et L2 (0 &lt;= alpha &lt;= 1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Valeur de la fonction coût régularisée.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.regCostFunction_Lasso">
+<span class="sig-name descname"><span class="pre">regCostFunction_Lasso</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.regCostFunction_Lasso" title="Permalink to this definition"></a></dt>
+<dd><p>Calcule la fonction de coût avec régularisation Lasso (L1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>ndarray</em>) – Prédictions du modèle pour les échantillons donnés.
+Taille : (m, 1), où <cite>m</cite> est le nombre d’échantillons.</p></li>
+<li><p><strong>y</strong> (<em>ndarray</em>) – Valeurs réelles correspondant aux prédictions <cite>yhat</cite>.
+Taille : (m, 1), où <cite>m</cite> est le nombre d’échantillons.</p></li>
+<li><p><strong>lmb</strong> (<em>float</em>) – Coefficient de régularisation, contrôle l’importance du terme
+de régularisation par rapport à l’erreur quadratique.
+Plus <cite>lmb</cite> est grand, plus les coefficients sont pénalisés.</p></li>
+<li><p><strong>theta</strong> (<em>ndarray</em>) – Vecteur des paramètres du modèle (poids) à pénaliser.
+Taille : (n, 1), où <cite>n</cite> est le nombre de caractéristiques.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Valeur de la fonction coût régularisée, calculée comme la
+somme de l’erreur quadratique moyenne et du terme de
+régularisation L1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.regCostFunction_Ridge">
+<span class="sig-name descname"><span class="pre">regCostFunction_Ridge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.regCostFunction_Ridge" title="Permalink to this definition"></a></dt>
+<dd><p>Fonction de coût avec régularisation Ridge (L2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yhat</strong> (<em>ndarray</em>) – Prédictions du modèle.</p></li>
+<li><p><strong>y</strong> (<em>ndarray</em>) – Valeurs réelles.</p></li>
+<li><p><strong>lmb</strong> (<em>float</em>) – Coefficient de régularisation.</p></li>
+<li><p><strong>theta</strong> (<em>ndarray</em>) – Coefficients du modèle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Valeur de la fonction coût régularisée.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.regGradients">
+<span class="sig-name descname"><span class="pre">regGradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.regGradients" title="Permalink to this definition"></a></dt>
+<dd><p>Dérivée de la fonction de coût regularisée</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.score">
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.score" title="Permalink to this definition"></a></dt>
+<dd><p>Calcul du coefficient de détermination R^2</p>
+<blockquote>
+<div><p>Parameters</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y_pred<span class="classifier">array-like</span></dt><dd><p>Valeurs prédites par le modèle.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>r2_score</strong> – Le coefficient de détermination.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.testCostFct">
+<span class="sig-name descname"><span class="pre">testCostFct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prevCostFct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.testCostFct" title="Permalink to this definition"></a></dt>
+<dd><p>Fonction pour tester l’évolution de la fonction de coût: vrai = continuer la descente de gradient</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.testRegCostFct">
+<span class="sig-name descname"><span class="pre">testRegCostFct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yhat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prevCostFct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.testRegCostFct" title="Permalink to this definition"></a></dt>
+<dd><p>Fonction pour tester l’évolution de la fonction de coût régularisée</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>test</strong> – vrai = continuer la descente de gradient</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gradient.gradient_descent.GradientDescent.updateParameters">
+<span class="sig-name descname"><span class="pre">updateParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gradient.gradient_descent.GradientDescent.updateParameters" title="Permalink to this definition"></a></dt>
+<dd><p>Gradient descent: mise à jour des paramètres</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-gradient">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gradient" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Amira.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

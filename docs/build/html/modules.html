@@ -1,0 +1,154 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gradient &mdash; Gradient Descent 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=359c27e9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Gradient Descent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">gradient</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gradient Descent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">gradient</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gradient">
+<h1>gradient<a class="headerlink" href="#gradient" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gradient.html">gradient package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gradient.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gradient.example.html">gradient.example package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gradient.example.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.example.html#module-gradient.example.data">gradient.example.data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.example.html#module-gradient.example">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gradient.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gradient.html#module-gradient.PreProcessing">gradient.PreProcessing module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gradient.html#gradient.PreProcessing.DataPreprocessor"><code class="docutils literal notranslate"><span class="pre">DataPreprocessor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.PreProcessing.DataPreprocessor.handle_outliers"><code class="docutils literal notranslate"><span class="pre">DataPreprocessor.handle_outliers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.PreProcessing.DataPreprocessor.normalize"><code class="docutils literal notranslate"><span class="pre">DataPreprocessor.normalize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gradient.html#module-gradient.gradient_descent">gradient.gradient_descent module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent"><code class="docutils literal notranslate"><span class="pre">GradientDescent</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.costFunction"><code class="docutils literal notranslate"><span class="pre">GradientDescent.costFunction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.fit"><code class="docutils literal notranslate"><span class="pre">GradientDescent.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.get_weights"><code class="docutils literal notranslate"><span class="pre">GradientDescent.get_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.gradients"><code class="docutils literal notranslate"><span class="pre">GradientDescent.gradients()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.hypothesis"><code class="docutils literal notranslate"><span class="pre">GradientDescent.hypothesis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.plot"><code class="docutils literal notranslate"><span class="pre">GradientDescent.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.plot_weights"><code class="docutils literal notranslate"><span class="pre">GradientDescent.plot_weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.plt"><code class="docutils literal notranslate"><span class="pre">GradientDescent.plt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.predict"><code class="docutils literal notranslate"><span class="pre">GradientDescent.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.regCostFunction"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.regCostFunction_ElasticNet"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction_ElasticNet()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.regCostFunction_Lasso"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction_Lasso()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.regCostFunction_Ridge"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regCostFunction_Ridge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.regGradients"><code class="docutils literal notranslate"><span class="pre">GradientDescent.regGradients()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.score"><code class="docutils literal notranslate"><span class="pre">GradientDescent.score()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.testCostFct"><code class="docutils literal notranslate"><span class="pre">GradientDescent.testCostFct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.testRegCostFct"><code class="docutils literal notranslate"><span class="pre">GradientDescent.testRegCostFct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html#gradient.gradient_descent.GradientDescent.updateParameters"><code class="docutils literal notranslate"><span class="pre">GradientDescent.updateParameters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gradient.html#module-gradient">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Amira.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
